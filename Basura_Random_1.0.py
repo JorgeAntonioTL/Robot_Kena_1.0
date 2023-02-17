@@ -9,6 +9,7 @@ def basura():
         pos = cord_Random()
         if area[pos[0]][pos[1]] != 1:
             area[pos[0]][pos[1]] = 1
+            print(area[pos[0]][pos[1]])
     
 
 
