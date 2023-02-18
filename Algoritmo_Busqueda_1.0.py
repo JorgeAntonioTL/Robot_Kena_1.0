@@ -22,10 +22,12 @@ def bateria_Baja():
             posicion_Actual[1] -= 1
         print(posicion_Actual)
         bateria[0] -= movimiento
-        print(bateria[0])
+        print(f"Batería: {bateria}")
+
         
 
     bateria[0] = 1000
+    print(f"Batería: {bateria}")
     volver_Ultima()
 
 def volver_Ultima():
@@ -71,6 +73,7 @@ for i in range(7):
 
             if cant_Basura == 0: 
                 print("Ta todo limpio :) ")
+                break
         
             if bateria[0] <= 350:
                 posicion_Ultima = posicion_Actual.copy()
