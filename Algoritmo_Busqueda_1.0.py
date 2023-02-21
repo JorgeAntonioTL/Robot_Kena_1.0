@@ -20,13 +20,21 @@ def bateria_Baja():
             posicion_Actual[0] -= 1
         if posicion_Actual[1] > 0: 
             posicion_Actual[1] -= 1
-        print(posicion_Actual)
+
         bateria[0] -= movimiento
         print(f"Batería: {bateria}")
+        print(f"Posición Actual: {posicion_Actual}")
 
+        area[posicion_Actual[0]][posicion_Actual[1]] = 9
+        for z in range(0, len(area[0])):
+            print(area[z])
+        area[posicion_Actual[0]][posicion_Actual[1]] = 0
+
+        print()
         
 
     bateria[0] = 1000
+    print("Batería Cargada")
     print(f"Batería: {bateria}")
     volver_Ultima()
 
@@ -42,9 +50,18 @@ def volver_Ultima():
             posicion_Actual[0]+= 1
         if posicion_Actual[1] < posicion_Ultima[1]:
             posicion_Actual[1]+= 1
-        print(posicion_Actual)
+        
         bateria[0] -= movimiento
-        print(bateria[0])
+        print(f"Batería: {bateria}")
+        print(f"Posición Actual: {posicion_Actual}")
+
+        area[posicion_Actual[0]][posicion_Actual[1]] = 9
+        for z in range(0, len(area[0])):
+            print(area[z])
+        area[posicion_Actual[0]][posicion_Actual[1]] = 0
+
+        print()
+        
 
 for i in range(7):
     posicion_Actual[0] = i
@@ -66,20 +83,24 @@ for i in range(7):
             print(f"Batería: {bateria}")
             print(f"Basura: {cant_Basura}")
 
+            area[posicion_Actual[0]][posicion_Actual[1]] = 9
             for z in range(0, len(area[0])):
                 print(area[z])
+            area[posicion_Actual[0]][posicion_Actual[1]] = 0
 
             print()
 
-            if cant_Basura == 0: 
-                print("Ta todo limpio :) ")
-                break
+            if cant_Basura == 0: break
         
             if bateria[0] <= 350:
                 posicion_Ultima = posicion_Actual.copy()
                 print("Batería Baja")
+                print(f"Posición Actual: {posicion_Actual}")
                 bateria_Baja()
 
+    if cant_Basura == 0: 
+        print("Ta todo limpio :) ")
+        break
     cambio_Fila = 1
 
 
