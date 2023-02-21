@@ -1,3 +1,8 @@
+#Programadores
+#Mayra Yazmin Vargas Arredondo
+#Jorge Antonio Toscano Lara
+#Luis Ernesto Garcia Alvarez
+
 import random
 
 def basura():

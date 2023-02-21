@@ -1,3 +1,8 @@
+#Programadores
+#Mayra Yazmin Vargas Arredondo
+#Jorge Antonio Toscano Lara
+#Luis Ernesto Garcia Alvarez
+
 from Basura_Random_1 import area, cant_Basura
 
 
