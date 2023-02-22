@@ -3,6 +3,8 @@
 #Jorge Antonio Toscano Lara
 #Luis Ernesto Garcia Alvarez
 
+#En este programa el robot no muere, termina su ejecución una vez que haya limpiado toda la basura
+
 from Basura_Random_1 import area, cant_Basura
 
 
