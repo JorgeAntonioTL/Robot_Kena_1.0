@@ -16,7 +16,52 @@ recoger = 20
 posicion_Actual = [0,0]
 posicion_Ultima = []
 cambio_Fila = 0
-      
+
+
+def Termino():
+    #Determinar cual de los parámetros de coordenada es mayor
+    if posicion_Actual[0]-1 > posicion_Actual[1]-1:
+        cor_Max = posicion_Actual[0]-1
+    else: cor_Max = posicion_Actual[1]-1
+
+    for i in range(cor_Max):
+        if posicion_Actual[0] > 1: 
+            posicion_Actual[0] -= 1
+        if posicion_Actual[1] > 1: 
+            posicion_Actual[1] -= 1
+
+        bateria[0] -= movimiento
+        print(f"Batería: {bateria}")
+        print(f"Posición Actual: {posicion_Actual}")
+
+        area[posicion_Actual[0]][posicion_Actual[1]] = 9
+        for z in range(0, len(area[0])):
+            print(area[z])
+        area[posicion_Actual[0]][posicion_Actual[1]] = 0
+
+        print()
+    
+    while bateria[0]>0:
+        posicion_Actual[0] += 1
+        bateria[0] -= movimiento
+        print(f"Batería: {bateria}")
+        print(f"Posición Actual: {posicion_Actual}")
+        for z in range(0, len(area[0])):
+            print(area[z])
+        posicion_Actual[0] -= 1
+        bateria[0] -= movimiento
+        print(f"Batería: {bateria}")
+        print(f"Posición Actual: {posicion_Actual}")
+        for z in range(0, len(area[0])):
+            print(area[z])
+
+        print()
+
+        if bateria[0] < 1:
+            print("El robot a muerto, pero ha finalizado su tarea con exito.")
+            break
+
+    
 
 for i in range(7):
     posicion_Actual[0] = i
@@ -57,7 +102,7 @@ for i in range(7):
 
     if cant_Basura == 0: 
         print("Ta todo limpio :) ")
-        break
+        Termino()
     cambio_Fila = 1
 
 
